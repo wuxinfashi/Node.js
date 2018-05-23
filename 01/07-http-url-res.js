@@ -1,3 +1,4 @@
+// 引入http核心模块
 var http = require('http')
 
 // 1. 创建 Server
@@ -6,6 +7,7 @@ var server = http.createServer()
 // 2. 监听 request 请求事件，设置请求处理函数
 server.on('request', function (req, res) {
   console.log('收到请求了，请求路径是：' + req.url)
+   // socket.remoteAddress:请求我的ip地址   scoket.remotePort:请求我的端口
   console.log('请求我的客户端的地址是：', req.socket.remoteAddress, req.socket.remotePort)
 
   // res.write('hello')
